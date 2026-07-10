@@ -1,9 +1,9 @@
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
-import { chatRoutes } from './routes/chat'
-import { conversationRoutes } from './routes/conversations'
-import { authRoutes } from './routes/auth'
-import { verifyToken } from './services/auth'
+import { chatRoutes } from './routes/chat.js'
+import { conversationRoutes } from './routes/conversations.js'
+import { authRoutes } from './routes/auth.js'
+import { verifyToken } from './services/auth.js'
 
 const PORT = parseInt(process.env.PORT || '4000', 10)
 const HOST = process.env.HOST || '0.0.0.0'
