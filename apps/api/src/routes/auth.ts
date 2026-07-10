@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
-import { prisma } from '../services/prisma'
+import { prisma } from '../services/prisma.js'
 import { hash, compare } from 'bcryptjs'
 import { z } from 'zod'
 

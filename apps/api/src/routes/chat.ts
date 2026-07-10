@@ -1,6 +1,6 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
-import { prisma } from '../services/prisma'
-import { genAI, generateConversationTitle } from '../services/gemini'
+import { prisma } from '../services/prisma.js'
+import { genAI, generateConversationTitle } from '../services/gemini.js'
 import { z } from 'zod'
 
 const chatSchema = z.object({
