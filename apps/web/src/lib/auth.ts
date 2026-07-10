@@ -37,9 +37,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   ],
   callbacks: {
     async jwt({ token, user, account }) {
-      if (user) {
-        token.id = user.id
-      }
       if (account && account.provider !== 'credentials') {
         try {
           const res = await fetch(`${API_URL}/auth/oauth`, {
@@ -56,8 +53,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           if (res.ok) {
             const data = await res.json()
             token.id = data.id
+          } else {
+            console.error('OAuth sync failed:', await res.text())
           }
-        } catch {}
+        } catch (err) {
+          console.error('OAuth sync error:', err)
+        }
+      } else if (user) {
+        token.id = user.id
       }
       return token
     },
