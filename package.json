@@ -1,0 +1,12 @@
+{
+  "name": "ai-chat-app",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel -r run dev",
+    "dev:web": "pnpm --filter web dev",
+    "dev:api": "pnpm --filter @ai-chat/api dev",
+    "build": "pnpm -r run build",
+    "db:setup": "pnpm --filter @ai-chat/api db:setup",
+    "lint": "pnpm -r run lint"
+  }
+}
